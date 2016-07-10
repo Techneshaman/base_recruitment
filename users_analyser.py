@@ -14,8 +14,6 @@ class UsersAnalyser:
 
     def register_variables(self, variables_list):
         self.variables_list = variables_list
-        for variable in self.variables_list:
-            variable.__init__(variable)
 
     def do_analysis(self):
         csv_reader = csv.reader(self.data)
@@ -32,16 +30,16 @@ class UsersAnalyser:
         if user_id not in self.output_data:
             self.output_data[user_id] = {}
         for variable in self.variables_list:
-            variable.on_data_point(variable, row)
+            variable.on_data_point(row)
 
     def _do_post_analysis(self):
         for variable in self.variables_list:
-            variable.do_post_analysis(variable)
+            variable.do_post_analysis()
 
     def get_output_data(self):
         output_header = []
         for variable in self.variables_list:
-            variable_name = variable.__name__
+            variable_name = variable.variable_name
             output_header.append(variable_name)
             for user_id in self.output_data:
                 user_result = variable.variable_data[user_id]

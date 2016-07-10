@@ -7,6 +7,7 @@ class LastActivity(Variable):
     def __init__(self):
         Variable.__init__(self)
         self.variable_data = {}
+        self.variable_name = 'LastActivity'
 
     def on_data_point(self, data_point):
         user_id = data_point[1]
@@ -15,6 +16,3 @@ class LastActivity(Variable):
 
     def do_post_analysis(self):
         pass
-        # print("LAST ACTIVITY")
-        # for user in self.variable_data:
-        #     print(user, self.variable_data[user])

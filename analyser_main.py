@@ -5,13 +5,42 @@ from data_analyser import DataAnalyser
 from users_analyser import UsersAnalyser
 from variables.first_activity import FirstActivity
 from variables.last_activity import LastActivity
+from variables.request_count import RequestCount
+from variables.browser_used import BrowserUsed
+from variables.status_count import StatusCount
+from variables.request_place_count import RequestPlaceCount
+from variables.avg_request_time import AvgRequestTime
+from variables.incorrect_request_time import IncorrectRequestTime
 
 SOURCE_FILE_PATH = 'E:\\Workspace\\web_req_short.csv'
 # SOURCE_FILE_PATH = 'E:\\Workspace\\web-requests-sample.csv'
 ENHANCED_FILE_PATH = 'E:\\Workspace\\web_req_enhanced.csv'
 
-variables_list = [FirstActivity,
-                  LastActivity]
+variables_list = [FirstActivity(),
+                  LastActivity(),
+                  RequestCount('get'),
+                  RequestCount('post'),
+                  RequestCount('put'),
+                  RequestCount('delete'),
+                  BrowserUsed('count'),
+                  BrowserUsed('most'),
+                  StatusCount('OK'),
+                  StatusCount('ServerError'),
+                  StatusCount('ClientError'),
+                  StatusCount('Other'),
+                  RequestPlaceCount('sales'),
+                  RequestPlaceCount('crm'),
+                  RequestPlaceCount('email'),
+                  RequestPlaceCount('settings'),
+                  RequestPlaceCount('leads'),
+                  RequestPlaceCount('tasks'),
+                  RequestPlaceCount('reports'),
+                  RequestPlaceCount('appointments'),
+                  RequestPlaceCount('permissions'),
+                  RequestPlaceCount('other'),
+                  AvgRequestTime(),
+                  IncorrectRequestTime()
+                  ]
 
 if __name__ == '__main__':
     # data_analyser = DataAnalyser(SOURCE_FILE_PATH)
