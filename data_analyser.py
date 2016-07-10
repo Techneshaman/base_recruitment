@@ -2,7 +2,7 @@ from data_frame_utils import *
 from correlation_utils import *
 import pandas
 import numpy
-import scipy
+from scipy import stats
 import matplotlib.pyplot as plotter
 
 __author__ = 'michal-witkowski'
@@ -73,7 +73,14 @@ class DataAnalyser:
         correl_data = remove_outliers(correl_data)
         plotter.plot(correl_data[0], correl_data[1], 'o')
         polynomial = numpy.polyfit(correl_data[0], correl_data[1], 2)
-        slope, intercept, r_value, p_value, std_err = scipy.stats.linregress(x, y)
+        slope, intercept, r_value, p_value, std_err = stats.linregress(correl_data[0], correl_data[1])
+
+        lower_limit = min(correl_data[0])
+        upper_limit = max(correl_data[0])
+        x = numpy.linspace(lower_limit, upper_limit, 1000)
+        y = polynomial[0]*x**2 + x*polynomial[1] + polynomial[2]
+        plotter.plot(x, y)
+
         print(r_value)
         print(polynomial)
         plotter.show()

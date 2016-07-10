@@ -1,3 +1,5 @@
+import numpy
+
 __author__ = 'michal-witkowski'
 
 
