@@ -4,8 +4,8 @@ import pandas
 import numpy
 import matplotlib.pyplot as plotter
 
-path = 'E:\\Workspace\\web_req_short.csv'
-# path = 'E:\\Workspace\\web-requests-sample.csv'
+# path = 'E:\\Workspace\\web_req_short.csv'
+path = 'E:\\Workspace\\web-requests-sample.csv'
 data_frame = pandas.read_csv(path, sep=',')
 # data_frame = data_frame.drop(data_frame.columns[[0]], axis=1)
 # data_frame.request = data_frame.request.replace(to_replace='GET', value=numpy.nan)
@@ -105,10 +105,10 @@ aux_pivot = data_frame.pivot_table(values=['timestamp', 'user_id', 'Is_error'],
 
 aux_pivot['Error_rate'] = aux_pivot['Is_error'] / aux_pivot['timestamp']
 aux_pivot2 = aux_pivot.to_dict()
-correll_dict = aux_pivot2['Error_rate']
+correl_dict = aux_pivot2['Error_rate']
 
 
-def get_correll_data(dictionary):
+def get_correl_data(dictionary):
     variable_a = []
     variable_b = []
     for key in dictionary:
@@ -117,14 +117,51 @@ def get_correll_data(dictionary):
         variable_b.append(value)
     return variable_a, variable_b
 
-correll_data = get_correll_data(correll_dict)
+correl_data = get_correl_data(correl_dict)
 
-def find_outliers(list):
+def remove_outliers(correl_data):
+    variable_a = correl_data[0]
+    outliers_values_a = find_outliers_values(variable_a)
+    variable_b = correl_data[1]
+    outliers_values_b = find_outliers_values(variable_b)
+    tuples_array = list(zip(variable_a, variable_b))
+    index = 0
+    indexes_to_remove = []
+    for item in tuples_array:
+        if is_outlying_value(item, outliers_values_a, outliers_values_b):
+            indexes_to_remove.append(index)
+        index += 1
+    variable_a = remove_values_by_index(variable_a, indexes_to_remove)
+    variable_b = remove_values_by_index(variable_b, indexes_to_remove)
+    return variable_a, variable_b
+
+
+def find_outliers_values(list):
     deviation = numpy.std(list)
-    print(deviation)
+    mean = numpy.mean(list)
+    outlier_low = mean - 3 * deviation
+    outlier_high = mean + 3 * deviation
+    return outlier_low, outlier_high
 
-find_outliers(correll_data[0])
-find_outliers(correll_data[1])
+def is_outlying_value(tuple, outliers_a, outliers_b):
+    value_a = tuple[0]
+    value_b = tuple[1]
+    if value_a < outliers_a[0] or value_a > outliers_a[1]:
+        return True
+    elif value_b < outliers_b[0] or value_b > outliers_b[1]:
+        return True
+    else:
+        return False
 
-plotter.plot(correll_data[0], correll_data[1], 'o')
+def remove_values_by_index(old_list, indexes_to_remove):
+    index = 0
+    new_list = []
+    for item in old_list:
+        if index not in indexes_to_remove:
+            new_list.append(item)
+        index += 1
+    return new_list
+
+correl_data = remove_outliers(correl_data)
+plotter.plot(correl_data[0], correl_data[1], 'o')
 plotter.show()
