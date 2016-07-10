@@ -2,6 +2,7 @@ from data_frame_utils import *
 from correlation_utils import *
 import pandas
 import numpy
+import math
 from scipy import stats
 import matplotlib.pyplot as plotter
 
@@ -66,21 +67,29 @@ class DataAnalyser:
         errors_per_user_per_minute = aux_dictionary['Errors_per_active_user']
         error_rate_per_minute = aux_dictionary['Error_rate']
         self._get_correlation_data(errors_per_user_per_minute)
-        self._get_correlation_data(error_rate_per_minute)
+        # self._get_correlation_data(error_rate_per_minute)
 
     def _get_correlation_data(self, correl_dict):
         correl_data = get_correl_data(correl_dict)
         correl_data = remove_outliers(correl_data)
         plotter.plot(correl_data[0], correl_data[1], 'o')
         polynomial = numpy.polyfit(correl_data[0], correl_data[1], 2)
-        slope, intercept, r_value, p_value, std_err = stats.linregress(correl_data[0], correl_data[1])
-
+        r_value = stats.linregress(correl_data[0], correl_data[1])[2]
+        p_value = stats.linregress(correl_data[0], correl_data[1])[3]
+        third_answer = self._get_third_answer(r_value, p_value, polynomial)
+        print(third_answer)
         lower_limit = min(correl_data[0])
         upper_limit = max(correl_data[0])
         x = numpy.linspace(lower_limit, upper_limit, 1000)
         y = polynomial[0]*x**2 + x*polynomial[1] + polynomial[2]
         plotter.plot(x, y)
-
-        print(r_value)
-        print(polynomial)
         plotter.show()
+
+    def _get_third_answer(self, r_value, p_value, coefficients):
+        if p_value < 0.05:
+            return 'ANSWER 3. There is a significant non-linear correlation (p = %s) between time of the day and ' \
+                   'crashes recorded. \n The equation for the correlation is %s*x^2 + %s*x + %s, and the R value is %s' \
+                   % (p_value, coefficients[0], coefficients[1], coefficients[2], r_value)
+        else:
+            return 'There is no statisticaly significant non-linear correlation between time of the day and crashes' \
+                   ' recorded.'
