@@ -36,7 +36,7 @@ class UsersAnalyser:
         for variable in self.variables_list:
             variable.do_post_analysis()
 
-    def get_output_data(self):
+    def get_output_data(self, output_path):
         output_header = []
         for variable in self.variables_list:
             variable_name = variable.variable_name

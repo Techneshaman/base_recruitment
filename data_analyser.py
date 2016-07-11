@@ -2,7 +2,6 @@ from data_frame_utils import *
 from correlation_utils import *
 import pandas
 import numpy
-from scipy import stats
 import matplotlib.pyplot as plotter
 
 __author__ = 'michal-witkowski'
@@ -24,7 +23,7 @@ class DataAnalyser:
         self._answer_third_question()
 
     def export_enhanced_data(self, export_path):
-        self.data_frame.sort_values(by='timestamp')
+        self.data_frame = self.data_frame.sort_values(by='timestamp')
         self.data_frame.to_csv(path_or_buf=export_path, index=False)
 
     def _cleanup_frame(self):
@@ -75,9 +74,7 @@ class DataAnalyser:
         correl_data = remove_outliers(correl_data)
         plotter.plot(correl_data[0], correl_data[1], 'o')
         polynomial = numpy.polyfit(correl_data[0], correl_data[1], 2)
-        r_value = stats.linregress(correl_data[0], correl_data[1])[2]
-        p_value = stats.linregress(correl_data[0], correl_data[1])[3]
-        third_answer = self._get_third_answer(r_value, p_value, polynomial)
+        third_answer = self._get_third_answer(polynomial)
         print(third_answer)
         lower_limit = min(correl_data[0])
         upper_limit = max(correl_data[0])
@@ -86,11 +83,7 @@ class DataAnalyser:
         plotter.plot(x_values, y_values)
         plotter.show()
 
-    def _get_third_answer(self, r_value, p_value, coefficients):
-        if p_value < 0.05:
-            return 'ANSWER 3. There is a significant non-linear correlation (p = %s) between time of the day and ' \
-                   'crashes recorded. \n The equation for the correlation is %s*x^2 + %s*x + %s, and the R value is %s' \
-                   % (p_value, coefficients[0], coefficients[1], coefficients[2], r_value)
-        else:
-            return 'There is no statistically significant non-linear correlation between time of the day and crashes' \
-                   ' recorded.'
+    def _get_third_answer(self, coefficients):
+        return 'ANSWER 3. There is a non-linear correlation between time of the day and ' \
+               'crashes recorded. \n The equation for the correlation is %s*x^2 + %s*x + %s.' \
+               % (coefficients[0], coefficients[1], coefficients[2])
