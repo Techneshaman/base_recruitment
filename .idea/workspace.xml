@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c363815-b9e4-4f37-928d-515915b6b0c9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyser_main.py" afterPath="$PROJECT_DIR$/analyser_main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users_analyser.py" afterPath="$PROJECT_DIR$/users_analyser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/variables/avg_browser_server_time_diff.py" afterPath="$PROJECT_DIR$/variables/avg_browser_server_time_diff.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/variables/avg_request_time.py" afterPath="$PROJECT_DIR$/variables/avg_request_time.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/variables/avg_session_time.py" afterPath="$PROJECT_DIR$/variables/avg_session_time.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_analyser.py" afterPath="$PROJECT_DIR$/data_analyser.py" />
     </list>
     <ignored path="base_pa_task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="analyser_main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="analyser_main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/analyser_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+            <state relative-caret-position="238">
+              <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
               <folding>
                 <element signature="e#1314#2757#0" expanded="false" />
               </folding>
@@ -39,46 +37,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_analyser.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data_analyser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_analyser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="avg_session_time.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/variables/avg_session_time.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="avg_browser_server_time_diff.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/variables/avg_browser_server_time_diff.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="24" column="93" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
-              <folding>
-                <element signature="e#0#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_analyser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users_analyser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -101,7 +67,6 @@
         <option value="$PROJECT_DIR$/data_frame_manipulations.py" />
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/correlation_utils.py" />
-        <option value="$PROJECT_DIR$/temp.py" />
         <option value="$PROJECT_DIR$/data_frame_utils.py" />
         <option value="$PROJECT_DIR$/variables/last_activity.py" />
         <option value="$PROJECT_DIR$/variables/first_activity.py" />
@@ -111,7 +76,6 @@
         <option value="$PROJECT_DIR$/variables/status_count.py" />
         <option value="$PROJECT_DIR$/variables/request_place_count.py" />
         <option value="$PROJECT_DIR$/variables/incorrect_status_time.py" />
-        <option value="$PROJECT_DIR$/data_analyser.py" />
         <option value="$PROJECT_DIR$/variables/session_counter.py" />
         <option value="$PROJECT_DIR$/variables/accounts_used.py" />
         <option value="$PROJECT_DIR$/variables/accounts_used_more.py" />
@@ -125,6 +89,8 @@
         <option value="$PROJECT_DIR$/variables/avg_session_time.py" />
         <option value="$PROJECT_DIR$/variables/avg_browser_server_time_diff.py" />
         <option value="$PROJECT_DIR$/users_analyser.py" />
+        <option value="$PROJECT_DIR$/temp.py" />
+        <option value="$PROJECT_DIR$/data_analyser.py" />
         <option value="$PROJECT_DIR$/analyser_main.py" />
       </list>
     </option>
@@ -457,14 +423,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data_frame_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="32" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/variables/first_activity.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -636,13 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/Python3-64bit/Lib/site-packages/pandas/core/series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1740">
-          <caret line="1692" column="29" selection-start-line="1692" selection-start-column="29" selection-end-line="1692" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/Python3-64bit/Lib/site-packages/numpy/__init__.py" />
     <entry file="file://E:/Python3-64bit/Lib/site-packages/numpy/_distributor_init.py" />
     <entry file="file://E:/Python3-64bit/Lib/site-packages/scipy/__init__.py">
@@ -652,7 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/temp.py" />
     <entry file="file://$PROJECT_DIR$/correlation_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-884">
@@ -766,7 +716,7 @@
         <state relative-caret-position="153">
           <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -776,7 +726,7 @@
         <state relative-caret-position="374">
           <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -818,7 +768,7 @@
         <state relative-caret-position="357">
           <caret line="24" column="93" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -831,22 +781,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyser_main.py">
+    <entry file="file://E:/Python3-64bit/Lib/site-packages/pandas/core/series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python3-64bit/Lib/site-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="1021" column="0" selection-start-line="1021" selection-start-column="0" selection-end-line="1021" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-          <folding>
-            <element signature="e#1314#2757#0" expanded="false" />
-          </folding>
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_analyser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyser_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+          <folding>
+            <element signature="e#1314#2757#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -21,8 +21,8 @@ from variables.last_n_request_errors import LastNRequestErrors
 from variables.places_visited import PlacesVisited
 from variables.place_used_most import PlaceUsedMost
 
-SOURCE_FILE_PATH = 'E:\\Workspace\\web_req_short.csv'
-# SOURCE_FILE_PATH = 'E:\\Workspace\\web-requests-sample.csv'
+# SOURCE_FILE_PATH = 'E:\\Workspace\\web_req_short.csv'
+SOURCE_FILE_PATH = 'E:\\Workspace\\web-requests-sample.csv'
 ENHANCED_FILE_PATH = 'E:\\Workspace\\web_req_enhanced.csv'
 USER_CENTRED_DATA_PATH = 'E:\\Workspace\\web_req_per_player.csv'
 
@@ -67,10 +67,10 @@ if __name__ == '__main__':
     data_analyser = DataAnalyser(SOURCE_FILE_PATH)
     data_analyser.prepare_data()
     data_analyser.answer_the_questions()
-    # data_analyser.export_enhanced_data(ENHANCED_FILE_PATH)
-    #
-    # users_analyser = UsersAnalyser(ENHANCED_FILE_PATH)
-    # users_analyser.register_variables(variables_list)
-    # users_analyser.do_analysis()
-    # users_analyser.get_output_data(USER_CENTRED_DATA_PATH)
-    # print('Analysis complete.')
+    data_analyser.export_enhanced_data(ENHANCED_FILE_PATH)
+
+    users_analyser = UsersAnalyser(ENHANCED_FILE_PATH)
+    users_analyser.register_variables(variables_list)
+    users_analyser.do_analysis()
+    users_analyser.get_output_data(USER_CENTRED_DATA_PATH)
+    print('Analysis complete.')

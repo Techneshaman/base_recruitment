@@ -23,7 +23,7 @@ class DataAnalyser:
         self._answer_third_question()
 
     def export_enhanced_data(self, export_path):
-        self.data_frame = self.data_frame.sort_values(by='timestamp')
+        self.data_frame = self.data_frame(by='timestamp')
         self.data_frame.to_csv(path_or_buf=export_path, index=False)
 
     def _cleanup_frame(self):
@@ -46,6 +46,7 @@ class DataAnalyser:
 
     def _answer_second_question(self):
         users_per_hour = self.data_frame.pivot_table(values='user_id', index='hour', aggfunc=lambda x: len(x.unique()))
+        self._plot_second_answer(users_per_hour)
         users_per_hour = users_per_hour.to_dict()
         highest_activity = find_highest_value(users_per_hour)
         most_crowded_hour = highest_activity[0]
@@ -72,6 +73,8 @@ class DataAnalyser:
     def _get_correlation_data(self, correl_dict):
         correl_data = get_correl_data(correl_dict)
         correl_data = remove_outliers(correl_data)
+        plotter.figure()
+        plotter.title('ANSWER 3.')
         plotter.plot(correl_data[0], correl_data[1], 'o')
         polynomial = numpy.polyfit(correl_data[0], correl_data[1], 2)
         third_answer = self._get_third_answer(polynomial)
@@ -87,3 +90,9 @@ class DataAnalyser:
         return 'ANSWER 3. There is a non-linear correlation between time of the day and ' \
                'crashes recorded. \n The equation for the correlation is %s*x^2 + %s*x + %s.' \
                % (coefficients[0], coefficients[1], coefficients[2])
+
+    def _plot_second_answer(self, users_per_hour):
+        index = (users_per_hour.index.to_series()).tolist()
+        values = users_per_hour.tolist()
+        plotter.bar(index, values)
+        plotter.title('ANSWER 2.')
