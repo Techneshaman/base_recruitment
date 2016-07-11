@@ -35,4 +35,4 @@ class AvgSessionTime(Variable):
                 total_session_time += session_time
             session_count = len(self.sessions_dict[user_id])
             avg_session_time = total_session_time / session_count
-            self.variable_data[user_id] = avg_session_time
+            self.variable_data[user_id] = int(avg_session_time)

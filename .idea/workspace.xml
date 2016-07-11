@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c363815-b9e4-4f37-928d-515915b6b0c9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/variables/account_used_most.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/variables/accounts_used.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/variables/avg_browser_server_time_diff.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/variables/avg_session_time.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/variables/last_n_request_errors.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/variables/last_n_requests_time.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/variables/place_used_most.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/variables/places_visited.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/variables/session_counter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyser_main.py" afterPath="$PROJECT_DIR$/analyser_main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_analyser.py" afterPath="$PROJECT_DIR$/data_analyser.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users_analyser.py" afterPath="$PROJECT_DIR$/users_analyser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/variables/avg_browser_server_time_diff.py" afterPath="$PROJECT_DIR$/variables/avg_browser_server_time_diff.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/variables/avg_request_time.py" afterPath="$PROJECT_DIR$/variables/avg_request_time.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/variables/avg_session_time.py" afterPath="$PROJECT_DIR$/variables/avg_session_time.py" />
     </list>
     <ignored path="base_pa_task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,20 +30,42 @@
       <file leaf-file-name="analyser_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyser_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+            <state relative-caret-position="119">
+              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
               <folding>
-                <element signature="e#34#72#0" expanded="true" />
+                <element signature="e#1314#2757#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="last_n_request_errors.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/variables/last_n_request_errors.py">
+      <file leaf-file-name="data_analyser.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data_analyser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="avg_session_time.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/variables/avg_session_time.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+              <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="avg_browser_server_time_diff.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/variables/avg_browser_server_time_diff.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="24" column="93" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -59,43 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="last_n_requests_time.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/variables/last_n_requests_time.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="first_activity.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/variables/first_activity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="place_used_most.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/variables/place_used_most.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_analyser.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users_analyser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/users_analyser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+            <state relative-caret-position="170">
+              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -128,22 +110,22 @@
         <option value="$PROJECT_DIR$/variables/browser_used.py" />
         <option value="$PROJECT_DIR$/variables/status_count.py" />
         <option value="$PROJECT_DIR$/variables/request_place_count.py" />
-        <option value="$PROJECT_DIR$/variables/avg_request_time.py" />
         <option value="$PROJECT_DIR$/variables/incorrect_status_time.py" />
         <option value="$PROJECT_DIR$/data_analyser.py" />
         <option value="$PROJECT_DIR$/variables/session_counter.py" />
-        <option value="$PROJECT_DIR$/variables/avg_session_time.py" />
         <option value="$PROJECT_DIR$/variables/accounts_used.py" />
         <option value="$PROJECT_DIR$/variables/accounts_used_more.py" />
         <option value="$PROJECT_DIR$/variables/account_used_most.py" />
-        <option value="$PROJECT_DIR$/variables/avg_browser_server_time_diff.py" />
         <option value="$PROJECT_DIR$/variables/last_n_requests_time.py" />
         <option value="$PROJECT_DIR$/variables/last_n_request_errors.py" />
         <option value="$PROJECT_DIR$/variables/places_visited.py" />
         <option value="$PROJECT_DIR$/variables/place_visited_most.py" />
         <option value="$PROJECT_DIR$/variables/place_used_most.py" />
-        <option value="$PROJECT_DIR$/analyser_main.py" />
+        <option value="$PROJECT_DIR$/variables/avg_request_time.py" />
+        <option value="$PROJECT_DIR$/variables/avg_session_time.py" />
+        <option value="$PROJECT_DIR$/variables/avg_browser_server_time_diff.py" />
         <option value="$PROJECT_DIR$/users_analyser.py" />
+        <option value="$PROJECT_DIR$/analyser_main.py" />
       </list>
     </option>
   </component>
@@ -195,20 +177,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="base_pa_task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base_pa_task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base_pa_task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="variables" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -518,7 +486,7 @@
         <state relative-caret-position="221">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#34#72#0" expanded="true" />
+            <element signature="e#1314#2757#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -553,7 +521,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#34#72#0" expanded="true" />
+            <element signature="e#1314#2757#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -563,7 +531,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#34#72#0" expanded="true" />
+            <element signature="e#1314#2757#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -573,7 +541,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#34#72#0" expanded="true" />
+            <element signature="e#1314#2757#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -583,7 +551,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#34#72#0" expanded="true" />
+            <element signature="e#1314#2757#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -593,7 +561,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#34#72#0" expanded="true" />
+            <element signature="e#1314#2757#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -729,13 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/variables/avg_request_time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_frame_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -768,14 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/variables/avg_session_time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/variables/account_used_most.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -784,51 +737,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/variables/avg_browser_server_time_diff.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="84" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/variables/accounts_used.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_analyser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/variables/last_n_request_errors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/variables/last_n_requests_time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -848,6 +761,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/variables/last_n_requests_time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/variables/last_n_request_errors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/variables/first_activity.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -858,27 +791,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/variables/place_used_most.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyser_main.py">
+    <entry file="file://$PROJECT_DIR$/variables/avg_request_time.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+        <state relative-caret-position="289">
+          <caret line="28" column="68" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/variables/avg_session_time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/variables/avg_browser_server_time_diff.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="93" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
           <folding>
-            <element signature="e#34#72#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/users_analyser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+        <state relative-caret-position="170">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyser_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding>
+            <element signature="e#1314#2757#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_analyser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

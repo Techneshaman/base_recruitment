@@ -64,12 +64,13 @@ variables_list = [
                   ]
 
 if __name__ == '__main__':
-    # data_analyser = DataAnalyser(SOURCE_FILE_PATH)
-    # data_analyser.prepare_data()
-    # data_analyser.answer_the_questions()
+    data_analyser = DataAnalyser(SOURCE_FILE_PATH)
+    data_analyser.prepare_data()
+    data_analyser.answer_the_questions()
     # data_analyser.export_enhanced_data(ENHANCED_FILE_PATH)
-
-    users_analyser = UsersAnalyser(ENHANCED_FILE_PATH)
-    users_analyser.register_variables(variables_list)
-    users_analyser.do_analysis()
-    users_analyser.get_output_data(USER_CENTRED_DATA_PATH)
+    #
+    # users_analyser = UsersAnalyser(ENHANCED_FILE_PATH)
+    # users_analyser.register_variables(variables_list)
+    # users_analyser.do_analysis()
+    # users_analyser.get_output_data(USER_CENTRED_DATA_PATH)
+    # print('Analysis complete.')

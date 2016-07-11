@@ -19,4 +19,7 @@ class AvgBrowserServerTimeDiff(Variable):
 
     def do_post_analysis(self):
         for user_id in self.variable_data:
-            self.variable_data[user_id] = numpy.average(self.variable_data[user_id])
+            if len(self.variable_data[user_id]) < 1:
+                self.variable_data[user_id] = -1
+            else:
+                self.variable_data[user_id] = int(numpy.average(self.variable_data[user_id]))

@@ -19,10 +19,12 @@ class AvgRequestTime(Variable):
             request_time = float(request_time)
             self.variable_data[user_id].append(request_time)
         except:
-            print(request_time)
             pass
 
     def do_post_analysis(self):
         for user_id in self.variable_data:
-            avg_time = average(self.variable_data[user_id])
-            self.variable_data[user_id] = avg_time
+            if len(self.variable_data[user_id]) < 1:
+                self.variable_data[user_id] = -1
+            else:
+                avg_time = int(average(self.variable_data[user_id]))
+                self.variable_data[user_id] = avg_time
