@@ -16,5 +16,7 @@ class RequestCount(Variable):
             self.variable_data[user_id] = 0
         request_name = data_point[3]
         request_name = request_name.lower()
-        if request_name == self.request_type:
+        if self.request_type == 'total':
+            self.variable_data[user_id] += 1
+        elif request_name == self.request_type:
             self.variable_data[user_id] += 1

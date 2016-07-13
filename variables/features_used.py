@@ -2,12 +2,12 @@ from variables.variable_pattern import Variable
 
 __author__ = 'michal-witkowski'
 
-class PlacesVisited(Variable):
+class FeaturesUsed(Variable):
 
     def __init__(self):
         Variable.__init__(self)
         self.variable_data = {}
-        self.variable_name = 'PlacesVisited'
+        self.variable_name = 'FeaturesUsed'
         self.places_list = ['sales', 'crm', 'email', 'settings', 'leads',
                             'tasks', 'reports', 'appointments', 'permissions']
 

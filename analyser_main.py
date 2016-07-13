@@ -18,8 +18,12 @@ from variables.account_used_most import AccountUsedMost
 from variables.avg_browser_server_time_diff import AvgBrowserServerTimeDiff
 from variables.last_n_requests_time import AvgLastNRequestsTime
 from variables.last_n_request_errors import LastNRequestErrors
-from variables.places_visited import PlacesVisited
-from variables.place_used_most import PlaceUsedMost
+from variables.features_used import FeaturesUsed
+from variables.top_n_feature import TopNFeature
+from variables.first_to_last_activity import FirstToLastActivity
+from variables.browser_producer_used import BrowserProducerUsed
+from variables.top_n_feature_percentage import TopNFeaturePercentage
+from variables.errors_percentage import ErrorsPercentage
 
 # SOURCE_FILE_PATH = 'E:\\Workspace\\web_req_short.csv'
 SOURCE_FILE_PATH = 'E:\\Workspace\\web-requests-sample.csv'
@@ -28,39 +32,38 @@ USER_CENTRED_DATA_PATH = 'E:\\Workspace\\web_req_per_player.csv'
 
 variables_list = [
                   FirstActivity(),
-                  SessionCounter(),
-                  AvgSessionTime(),
+                  LastActivity(),
+                  FirstToLastActivity(),
                   AccountsUsed(),
                   AccountUsedMost(),
-                  AvgBrowserServerTimeDiff(),
-                  AvgLastNRequestsTime(n=10),
-                  LastNRequestErrors(n=10),
-                  LastNRequestErrors(n=1),
-                  LastActivity(),
-                  RequestCount('get'),
-                  RequestCount('post'),
-                  RequestCount('put'),
-                  RequestCount('delete'),
                   BrowserUsed('count'),
                   BrowserUsed('most'),
-                  StatusCount('OK'),
-                  StatusCount('ServerError'),
-                  StatusCount('ClientError'),
-                  StatusCount('Other'),
-                  PlacesVisited(),
-                  PlaceUsedMost(),
-                  RequestPlaceCount('sales'),
-                  RequestPlaceCount('crm'),
-                  RequestPlaceCount('email'),
-                  RequestPlaceCount('settings'),
-                  RequestPlaceCount('leads'),
-                  RequestPlaceCount('tasks'),
-                  RequestPlaceCount('reports'),
-                  RequestPlaceCount('appointments'),
-                  RequestPlaceCount('permissions'),
-                  RequestPlaceCount('other'),
+                  BrowserProducerUsed('count'),
+                  BrowserProducerUsed('most'),
+                  FeaturesUsed(),
+                  TopNFeature(1),
+                  TopNFeature(2),
+                  TopNFeature(3),
+                  TopNFeaturePercentage(1),
+                  TopNFeaturePercentage(2),
+                  TopNFeaturePercentage(3),
+                  SessionCounter(),
+                  AvgSessionTime(),
+                  AvgBrowserServerTimeDiff(),
+                  RequestCount('total'),
+                  StatusCount('errors'),
+                  ErrorsPercentage('total'),
+                  ErrorsPercentage('server'),
+                  ErrorsPercentage('client'),
+                  ErrorsPercentage('other'),
+                  IncorrectRequestTime(),
                   AvgRequestTime(),
-                  IncorrectRequestTime()
+                  AvgLastNRequestsTime(n=10),
+                  AvgLastNRequestsTime(n=3),
+                  AvgLastNRequestsTime(n=1),
+                  LastNRequestErrors(n=10),
+                  LastNRequestErrors(n=3),
+                  LastNRequestErrors(n=1)
                   ]
 
 if __name__ == '__main__':

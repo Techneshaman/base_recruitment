@@ -2,12 +2,13 @@ from variables.variable_pattern import Variable
 
 __author__ = 'michal-witkowski'
 
-class PlaceUsedMost(Variable):
+class TopNFeature(Variable):
 
-    def __init__(self):
+    def __init__(self, n=4):
         Variable.__init__(self)
         self.variable_data = {}
-        self.variable_name = 'PlaceUsedMost'
+        self.variable_name = 'Top%sFeature' % n
+        self.n = n
         self.places_list = ['sales', 'crm', 'email', 'settings', 'leads',
                             'tasks', 'reports', 'appointments', 'permissions']
 
@@ -25,11 +26,15 @@ class PlaceUsedMost(Variable):
 
     def do_post_analysis(self):
         for user_id in self.variable_data:
-            max_requests = 0
-            top_visited = ''
+            features_used = []
             for place in self.variable_data[user_id]:
-                requests_count = self.variable_data[user_id][place]
-                if requests_count > max_requests:
-                    max_requests = requests_count
-                    top_visited = place
-            self.variable_data[user_id] = top_visited
+                count = self.variable_data[user_id][place]
+                visits_tuple = (count, place)
+                features_used.append(visits_tuple)
+            features_used.sort(key=lambda tup: tup[0], reverse=True)
+            if self.n > len(features_used):
+                self.variable_data[user_id] = 'NA'
+            else:
+                index = self.n - 1
+                top_n_feature = features_used[index][1]
+                self.variable_data[user_id] = top_n_feature

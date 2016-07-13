@@ -16,7 +16,9 @@ class StatusCount(Variable):
         status_type = self._get_status_type(status_number)
         if user_id not in self.variable_data:
             self.variable_data[user_id] = 0
-        if status_type == self.status_type:
+        if self.status_type == 'errors' and status_type != 'OK':
+            self.variable_data[user_id] += 1
+        elif status_type == self.status_type:
             self.variable_data[user_id] += 1
 
     def do_post_analysis(self):

@@ -7,7 +7,7 @@ class IncorrectRequestTime(Variable):
     def __init__(self):
         Variable.__init__(self)
         self.variable_data = {}
-        self.variable_name = 'IncorrectStatusTime'
+        self.variable_name = 'IncorrectRequestTime'
 
     def on_data_point(self, data_point):
         user_id = data_point[1]
