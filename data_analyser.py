@@ -25,7 +25,9 @@ class DataAnalyser:
         plotter.show()
 
     def export_enhanced_data(self, export_path):
+        print('Sorting output...')
         self.data_frame = self.data_frame.sort_values(by='timestamp')
+        print('Exporting output...')
         self.data_frame.to_csv(path_or_buf=export_path, index=False)
 
     def _cleanup_frame(self):
