@@ -21,9 +21,11 @@ class DataAnalyser:
         self._answer_first_question()
         self._answer_second_question()
         self._answer_third_question()
+        self._answer_extra_question()
+        plotter.show()
 
     def export_enhanced_data(self, export_path):
-        self.data_frame = self.data_frame(by='timestamp')
+        self.data_frame = self.data_frame.sort_values(by='timestamp')
         self.data_frame.to_csv(path_or_buf=export_path, index=False)
 
     def _cleanup_frame(self):
@@ -42,6 +44,23 @@ class DataAnalyser:
     def _answer_first_question(self):
         active_users = self.data_frame['user_id']
         unique_users = count_distinct(active_users)
+        unique_users_pivot = self.data_frame.pivot_table(index='user_id', values='hour', aggfunc='min')
+        unique_users_per_hour = {}
+        for item in unique_users_pivot:
+            if item not in unique_users_per_hour:
+                unique_users_per_hour[item] = 0
+            unique_users_per_hour[item] += 1
+        labels = []
+        values = []
+        for item in unique_users_per_hour:
+            values.append(unique_users_per_hour[item])
+            item = str(item) + ' hrs'
+            labels.append(item)
+        total = sum(values)
+        colours = ['b', 'g', 'r', 'y', 'yellowgreen', 'gold', 'lightskyblue', 'lightcoral']
+        plotter.style.use('ggplot')
+        plotter.pie(values, labels=labels, autopct=lambda p: '{:.0f}'.format(p * total / 100), colors=colours)
+        plotter.title('ANSWER 1. (visualisation)\n Users per first hour of activity registered')
         print('ANSWER 1. There were', unique_users, 'unique users in the analysed period.')
 
     def _answer_second_question(self):
@@ -70,11 +89,40 @@ class DataAnalyser:
         self._get_correlation_data(errors_per_user_per_minute)
         # self._get_correlation_data(error_rate_per_minute)
 
+    def _answer_extra_question(self):
+        pivot_table = self.data_frame.pivot_table(index='account_id', values='user_id',
+                                                  aggfunc=lambda x: len(x.unique()))
+        users_per_account = {}
+        total = 0
+        for item in pivot_table:
+            total += 1
+            if item not in users_per_account:
+                users_per_account[item] = 0
+            users_per_account[item] += 1
+        index = []
+        values = []
+        for item in users_per_account:
+            index.append(item)
+            values.append(users_per_account[item])
+        plotter.figure()
+        plotter.bar(index, values)
+        multiaccounts = total - users_per_account[1]
+        multiaccounts_percentage = (float(multiaccounts) * 100) / total
+        print('EXTRA ANSWER. There are %s%% of accounts (N = %s) that are used by more than one user.'
+              % (multiaccounts_percentage, multiaccounts))
+        plotter.xlim([1, 5.9])
+        plotter.title('EXTRA ANSWER (visualisation) \n Amount of unique users per account (xlim=5)')
+        plotter.xlabel('Amount of unique users per single account')
+        plotter.ylabel('Amount of accounts')
+
+
     def _get_correlation_data(self, correl_dict):
         correl_data = get_correl_data(correl_dict)
         correl_data = remove_outliers(correl_data)
         plotter.figure()
-        plotter.title('ANSWER 3.')
+        plotter.title('ANSWER 3. (visualisation) \n Non-linear correlation between error rate and daytime.')
+        plotter.ylabel('Errors per active users per minute')
+        plotter.xlabel('Daytime (minutes of a day)')
         plotter.plot(correl_data[0], correl_data[1], 'o')
         polynomial = numpy.polyfit(correl_data[0], correl_data[1], 2)
         third_answer = self._get_third_answer(polynomial)
@@ -84,7 +132,6 @@ class DataAnalyser:
         x_values = numpy.linspace(lower_limit, upper_limit, 1000)
         y_values = polynomial[0]*x_values**2 + x_values*polynomial[1] + polynomial[2]
         plotter.plot(x_values, y_values)
-        plotter.show()
 
     def _get_third_answer(self, coefficients):
         return 'ANSWER 3. There is a non-linear correlation between time of the day and ' \
@@ -94,5 +141,9 @@ class DataAnalyser:
     def _plot_second_answer(self, users_per_hour):
         index = (users_per_hour.index.to_series()).tolist()
         values = users_per_hour.tolist()
+        plotter.figure()
         plotter.bar(index, values)
-        plotter.title('ANSWER 2.')
+        plotter.title('ANSWER 2. (visualisation)\n Active users per hour.')
+        plotter.ylabel('Active users')
+        plotter.xlabel('Daytime (hr)')
+        plotter.xlim([0, 23])
